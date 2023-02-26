@@ -109,8 +109,7 @@ body {
 .weather-details {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    margin-top: 30px;   
+    justify-content: space-between; 
 }
 
 .weather-details .humidity, .weather-details .wind {
@@ -174,7 +173,7 @@ body {
     opacity: 0;
 }
 
-.fade-in {
+.fadeIn {
     animation: 0.5 fadeIn  forwards;
     animation-delay: 0.5s;
 }
@@ -185,7 +184,3 @@ body {
         opacity: 1;
     }
 }
-
-
-
-
