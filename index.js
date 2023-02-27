@@ -2,12 +2,23 @@
 const container = document.querySelector('.container');
 const searchBar = document.querySelector('.search-bar button');
 const weatherBox = document.querySelector('.weather-box');
-const weatherDetails = document.querySelector('.weather-details');
 const error = document.querySelector('.not-found');
+const clear = document.querySelector('#clear');
+const query = document.querySelector('#query')
+
+
+clear.addEventListener('click', () => {
+  query.value = '';
+  container.style.height = '105px';
+  weatherBox.style.display = 'none';
+  error.style.display = 'none';
+  error.classList.remove('fadeIn');
+  weatherBox.classList.remove('fadeIn');
+})
 
 searchBar.addEventListener('click', () => {
 
-  const API_KEY = 'YOUR_API_KEY';
+  const API_KEY = 'API_KEY';
   const location = document.querySelector('.search-bar input').value;
 
   if (location === '') {
@@ -20,7 +31,6 @@ searchBar.addEventListener('click', () => {
         if (json.cod === '404') {
           container.style.height = '400px';
           weatherBox.style.display = 'none';
-          weatherDetails.style.display = 'none';
           error.style.display = 'block';
           error.classList.add('fadeIn');
           return;
@@ -32,8 +42,13 @@ searchBar.addEventListener('click', () => {
         const image = document.querySelector('.weather-box img');
         const temperature = document.querySelector('.weather-box .temperature');
         const description = document.querySelector('.weather-box .description');
-        const humidity = document.querySelector('.weather-details .humidity span');
-        const wind = document.querySelector('.weather-details .wind span');
+        const humidity = document.querySelector('.weather-box .humidity span');
+        const wind = document.querySelector('.weather-box .wind span');
+        const visibility = document.querySelector('.weather-box .visibility span');
+        const pressure = document.querySelector('.weather-box .pressure span');
+        const feels_like = document.querySelector('.weather-box .feels-like span');
+        const temp_min = document.querySelector('.weather-box .temp-min span');
+        const temp_max = document.querySelector('.weather-box .temp-max span');
 
         switch (json.weather[0].main) {
           case 'Clear':
@@ -59,11 +74,14 @@ searchBar.addEventListener('click', () => {
         description.innerHTML = `${json.weather[0].description}`;
         humidity.innerHTML = `${json.main.humidity}%`;
         wind.innerHTML = `${parseInt(json.wind.speed)} km/h`;
+        visibility.innerHTML = `${(parseFloat(json.visibility) / 1000).toFixed(2)} km`;
+        pressure.innerHTML = `${parseInt(json.main.pressure)} hPa`;
+        feels_like.innerHTML = `${parseInt(json.main.feels_like)}<span>°C</span>`;
+        temp_min.innerHTML = `${parseInt(json.main.temp_min)}<span>°C</span>`;
+        temp_max.innerHTML = `${parseInt(json.main.temp_max)}<span>°C</span>`;
 
         weatherBox.style.display = '';
-        weatherDetails.style.display = '';
         weatherBox.classList.add('fadeIn');
-        weatherDetails.classList.add('fadeIn');
-        container.style.height = '590px';
+        container.style.height = '790px';
       });
 });
