@@ -31,4 +31,4 @@ Data are being fetched from [**OpenWeather API**](https://openweathermap.org/).
 - Vanilla JavaScript
 
 ## Acknowledgments
-Extended and redesigned version of video by: [**AsmrProg**](https://youtu.be/iILFBGm_I9M)
+This application is a **extended and redesigned version** of result shown in video by: [**AsmrProg**](https://youtu.be/iILFBGm_I9M)
