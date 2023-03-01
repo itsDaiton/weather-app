@@ -1,8 +1,11 @@
 # Weather App
 
-Simple JavaScript weather application.
+Simple JavaScript weather application that fetches data from an API and displays it to user in a fancy way.
 
 Live demo of this application can be found under this [**link**](https://sparkly-lolly-96f74c.netlify.app/).
+
+![image](https://user-images.githubusercontent.com/72783924/222010437-482df703-10c9-41e7-93f8-e8ebda29ab56.png)
+
 
 ## Description
 
