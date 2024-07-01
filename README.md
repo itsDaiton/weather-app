@@ -2,8 +2,6 @@
 
 Simple JavaScript weather application that fetches weather data for a specific location from an API and displays it to user in a modern design.
 
-Live demo of this application can be found under this [**link**](https://sparkly-lolly-96f74c.netlify.app/).
-
 ![image](https://user-images.githubusercontent.com/72783924/222010824-cbefc253-fe07-44f0-85a6-5d3f43dffa11.png)
 
 ## Description
