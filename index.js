@@ -18,7 +18,7 @@ clear.addEventListener('click', () => {
 
 searchBar.addEventListener('click', () => {
 
-  const API_KEY = '1616e83974f33095ffea22ec133bcd11';
+  const API_KEY = 'API_KEY';
   const location = document.querySelector('.search-bar input').value;
 
   if (location === '') {
